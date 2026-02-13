@@ -23,12 +23,41 @@ body {
   min-height: 100vh;
 }
 
-/* Mapbox container */
-.bus-marker {
+/* Mapbox + custom markers */
+.bus-marker-outer {
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  pointer-events: auto;
+}
+
+.bus-marker-inner {
+  width: 26px;
+  height: 26px;
+  border-radius: 0.9rem;
+  background: radial-gradient(circle at 30% 20%, #f97316, #ef4444);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transform-origin: center;
+}
+
+.bus-marker-inner svg {
+  width: 18px;
+  height: 18px;
+}
+
+.stop-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #38bdf8;
+  border: 2px solid white;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.45);
 }
 
 .mapboxgl-ctrl-attrib-inner a {

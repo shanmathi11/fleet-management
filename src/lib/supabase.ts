@@ -11,10 +11,15 @@ export const supabase = createClient(supabaseUrl ?? '', supabaseAnonKey ?? '')
 
 export type BusStatusRow = {
   id: string
+  driver_id: string | null
   lat: number
   lng: number
   is_active: boolean
   updated_at: string
+  // Optional bearing in degrees, where 0 = north, 90 = east.
+  bearing?: number
+  // Optional PostGIS geography point as text representation
+  location?: string | null
 }
 
 export type BusStopRow = {
